@@ -21,6 +21,7 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
     }
     .time-box {
       display: inline-block;
@@ -37,30 +38,90 @@
   </style>
 </head>
 <body>
-  <div class="countdown">
+  <div class="row ">
+  <div class="col-12">
+  <div id="cd1" class="countdown">
     <h2>Dias Restantes para el primer BONO</h2>
     <div class="time-box">
-      <span id="days">0</span>
+      <span id="days1">0</span>
       <p>Days</p>
     </div>
     <div class="time-box">
-      <span id="hours">0</span>
+      <span id="hours1">0</span>
       <p>Hours</p>
     </div>
     <div class="time-box">
-      <span id="minutes">0</span>
+      <span id="minutes1">0</span>
       <p>Minutes</p>
     </div>
     <div class="time-box">
-      <span id="seconds">0</span>
+      <span id="seconds1">0</span>
       <p>Seconds</p>
     </div>
   </div>
-
+  <div id="cd2" class="countdown">
+    <h2>Dias Restantes para el doble</h2>
+    <div class="time-box">
+      <span id="days2">0</span>
+      <p>Days</p>
+    </div>
+    <div class="time-box">
+      <span id="hours2">0</span>
+      <p>Hours</p>
+    </div>
+    <div class="time-box">
+      <span id="minutes2">0</span>
+      <p>Minutes</p>
+    </div>
+    <div class="time-box">
+      <span id="seconds2">0</span>
+      <p>Seconds</p>
+    </div>
+  </div>
+  <div id="cd3" class="countdown">
+    <h2>Dias Restantes para el bono de ley</h2>
+    <div class="time-box">
+      <span id="days3">0</span>
+      <p>Days</p>
+    </div>
+    <div class="time-box">
+      <span id="hours3">0</span>
+      <p>Hours</p>
+    </div>
+    <div class="time-box">
+      <span id="minutes3">0</span>
+      <p>Minutes</p>
+    </div>
+    <div class="time-box">
+      <span id="seconds3">0</span>
+      <p>Seconds</p>
+    </div>
+  </div>
+  <div id="cd4" class="countdown">
+    <h2>Dias Restantes para bono variable</h2>
+    <div class="time-box">
+      <span id="days4">0</span>
+      <p>Days</p>
+    </div>
+    <div class="time-box">
+      <span id="hours4">0</span>
+      <p>Hours</p>
+    </div>
+    <div class="time-box">
+      <span id="minutes4">0</span>
+      <p>Minutes</p>
+    </div>
+    <div class="time-box">
+      <span id="seconds4">0</span>
+      <p>Seconds</p>
+    </div>
+  </div>
+  </div>
+</div>
   <!-- JavaScript -->
   <script>
-    function startCountdown(targetDate) {
-      const countdownElement = document.querySelector('.countdown');
+    function startCountdown(targetDate,id) {
+      const countdownElement = document.querySelector('#cd'+id);
 
       function updateCountdown() {
         const now = new Date().getTime();
@@ -76,17 +137,26 @@
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById('days').innerText = days;
-        document.getElementById('hours').innerText = hours;
-        document.getElementById('minutes').innerText = minutes;
-        document.getElementById('seconds').innerText = seconds;
+        document.getElementById('days'+id).innerText = days;
+        document.getElementById('hours'+id).innerText = hours;
+        document.getElementById('minutes'+id).innerText = minutes;
+        document.getElementById('seconds'+id).innerText = seconds;
       }
 
       setInterval(updateCountdown, 1000);
     }
 
-    const targetDate = new Date("2024-10-01T00:00:00").getTime();
-    startCountdown(targetDate);
+    const targetDate1 = new Date("2024-10-01T00:00:00").getTime();
+    const targetDate2 = new Date("2024-11-29T00:00:00").getTime();
+    const targetDate3 = new Date("2024-12-13T00:00:00").getTime();
+    const targetDate4 = new Date("2025-01-02T00:00:00").getTime();
+
+    console.log(targetDate1);
+    startCountdown(targetDate1,'1');
+    startCountdown(targetDate2,'2');
+    startCountdown(targetDate3,'3');
+    startCountdown(targetDate4,'4');
+    
   </script>
 </body>
 </html>
