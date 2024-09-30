@@ -14,9 +14,29 @@
       height: 100vh;
       background-color: #B1B3B5;
     }
+    .background-image {
+             background-image: url('./img/Logo.png');
+            background-size: cover;
+            display: block;
+
+            filter: blur(7px) contrast(70%);
+
+            height: 130%;
+            width: 90%;
+            left: 1;
+            position: fixed;
+            right: 1;
+            z-index: 2;
+     }
+     .content {
+            left: 1;
+            position: fixed;
+            right: 1;
+            z-index: 2;
+        }
     .countdown {
       text-align: center;
-      background-color: #fff;
+      background-color: #ffffff79;
       border: 2px solid #007bff;
       padding: 20px;
       border-radius: 10px;
@@ -38,13 +58,14 @@
   </style>
 </head>
 <body>
-  <div class="container no-gutters">
+  <div class="background-image"></div>
+  <div class="container no-gutters content">
       <div class="row">
-        <div class="col col-2">
-          <img class="img-responsive" src="img/Logo.png" alt="">
+        <div class="col col-1">
+          
         </div>
 
-        <div class=" col col-8">
+        <div class=" col col-10">
           <div id="cd1" class="countdown">
             <h2>Dias Restantes para el primer BONO</h2>
             <div class="time-box">
