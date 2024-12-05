@@ -40,32 +40,14 @@
   </style>
 </head>
 <body>
-  <div class="container no-gutters">
+    <div class="container no-gutters">
       <div class="row">
         <div class="col col-1">
           <img class="img-responsive" src="img/Logo.png" alt="">
         </div>
 
         <div class=" col col-10">
-          <div id="cd2" class="countdown">
-            <h2>Dias Restantes Para Rifa Navideña</h2>
-            <div class="time-box">
-              <span id="days2">0</span>
-              <p>Days</p>
-            </div>
-            <div class="time-box">
-              <span id="hours2">0</span>
-              <p>Hours</p>
-            </div>
-            <div class="time-box">
-              <span id="minutes2">0</span>
-              <p>Minutes</p>
-            </div>
-            <div class="time-box">
-              <span id="seconds2">0</span>
-              <p>Seconds</p>
-            </div>
-          </div>
+
           <div id="cd3" class="countdown">
             <h2>Dias Restantes para el bono de ley</h2>
             <div class="time-box">
@@ -118,7 +100,7 @@
         const distance = targetDate - now;
 
         if (distance < 0) {
-          countdownElement.innerHTML = "<h2>Cuenta Regresiva Finalizada</h2>";
+          countdownElement.innerHTML = "<h2>Countdown Ended</h2>";
           return;
         }
 
@@ -136,8 +118,8 @@
       setInterval(updateCountdown, 1000);
     }
 
-    const targetDate1 = new Date("2024-10-01T00:00:00").getTime();
-    const targetDate2 = new Date("2024-12-06T16:30:00").getTime();
+    const targetDate1 = new Date("2024-10-02T00:00:00").getTime();
+    const targetDate2 = new Date("2024-11-29T00:00:00").getTime();
     const targetDate3 = new Date("2024-12-13T00:00:00").getTime();
     const targetDate4 = new Date("2025-01-02T00:00:00").getTime();
 
